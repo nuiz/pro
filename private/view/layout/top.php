@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1170, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Thai Pro</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo \Main\Helper\URL::absolute("/public/css/bootstrap.min.css");?>" rel="stylesheet">
@@ -21,9 +21,10 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo \Main\Helper\URL::absolute("/public/js/bootstrap.min.js");?>"></script>
 </head>
-<body>
+<body style="background-color: #f1f1f1;">
 
 <style>
+
     .dropdown-submenu {
         position: relative;
     }
@@ -100,9 +101,17 @@
     }
 </style>
 
-<div class="container">
-    <div class="row" style="background-color: black;">
-        <h3 class="pull-left" style="color: white;">Logo</h3>
+<div class="container" style="background-color: #ffffff;">
+    <div class="row" style="background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+">
+        <h4 class="pull-left" style="color: white;padding-left: 10px;">Logo</h4>
         <div class="pull-right" style="padding: 10px;">
             <?php if(@$_SESSION['login']){ ?>
                 <form method="post" action="<?php echo \Main\Helper\URL::absolute('/logout');?>">
@@ -112,7 +121,7 @@
             <?php }else{ ?>
                 <form method="post" action="<?php echo \Main\Helper\URL::absolute('/login');?>">
                     <input type="password" name="password">
-                    <button type="submit">Submit</button>
+                    <button type="submit">Login</button>
                 </form>
             <?php }?>
         </div>
