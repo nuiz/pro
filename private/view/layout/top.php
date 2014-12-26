@@ -99,31 +99,48 @@
         height: 180px;
     }
 </style>
-<div class="container-fluid">
+
+<div class="container">
+    <div class="row" style="background-color: black;">
+        <h3 class="pull-left" style="color: white;">Logo</h3>
+        <div class="pull-right" style="padding: 10px;">
+            <?php if(@$_SESSION['login']){ ?>
+                <form method="post" action="<?php echo \Main\Helper\URL::absolute('/logout');?>">
+                    <a class="btn btn-default" href="<?php echo \Main\Helper\URL::absolute('/edit/'.$params['page_name']);?>">Edit</a>
+                    <button class="btn btn-default" type="submit">logout</button>
+                </form>
+            <?php }else{ ?>
+                <form method="post" action="<?php echo \Main\Helper\URL::absolute('/login');?>">
+                    <input type="password" name="password">
+                    <button type="submit">Submit</button>
+                </form>
+            <?php }?>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4 brand-block" style="background: #BA0023;">
             <div class="text-center brand-bar"><img src="<?php echo \Main\Helper\URL::absolute('/public/images/bar/happy.png');?>"></div>
             <div class="row">
                 <div class="col-md-3 text-center pro-block">
-                    <a href="dtac_net">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/dtac_net');?>">
                         <span class="glyphicon glyphicon-globe pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>แพ็กเกจเล่นเน็ต</span>
                     </a>
                 </div>
                 <div class="col-md-3 text-center pro-block">
-                    <a href="dtac_tel">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/dtac_tel');?>">
                         <span class="glyphicon glyphicon-earphone pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>โปรเสริมค่าโทร</span>
                     </a>
                 </div>
                 <div class="col-md-3 text-center pro-block">
-                    <a href="dtac_sms">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/dtac_sms');?>">
                         <span class="glyphicon glyphicon-envelope pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>SMS & MMS</span>
                     </a>
                 </div>
                 <div class="col-md-3 text-center pro-block">
-                    <a href="dtac_music">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/dtac_music');?>">
                         <span class="glyphicon glyphicon-music pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>เสียงเพลง</span>
                     </a>
@@ -134,25 +151,25 @@
             <div class="text-center brand-bar"><img src="<?php echo \Main\Helper\URL::absolute('/public/images/bar/ais.jpg');?>"></div>
             <div class="row">
                 <div class="col-md-3 text-center pro-block">
-                    <a href="ais_net">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/ais_net');?>">
                         <span class="glyphicon glyphicon-globe pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>แพ็กเกจเล่นเน็ต</span>
                     </a>
                 </div>
                 <div class="col-md-3 text-center pro-block">
-                    <a href="ais_tel">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/ais_tel');?>">
                         <span class="glyphicon glyphicon-earphone pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>โปรเสริมค่าโทร</span>
                     </a>
                 </div>
                 <div class="col-md-3 text-center pro-block">
-                    <a href="ais_sms">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/ais_sms');?>">
                         <span class="glyphicon glyphicon-envelope pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>SMS & MMS</span>
                     </a>
                 </div>
                 <div class="col-md-3 text-center pro-block">
-                    <a href="ais_music">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/ais_music');?>">
                         <span class="glyphicon glyphicon-music pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>เสียงเพลง</span>
                     </a>
@@ -166,19 +183,19 @@
 
             <div class="row">
                 <div class="col-md-4 text-center pro-block">
-                    <a href="true_net">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/true_net');?>">
                         <span class="glyphicon glyphicon-globe pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>แพ็กเกจเล่นเน็ต</span>
                     </a>
                 </div>
                 <div class="col-md-4 text-center pro-block">
-                    <a href="true_tel_sms">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/true_tel_sms');?>">
                         <span class="glyphicon glyphicon-earphone pro-icon"><i class="fa fa-globe"></i></span>
                         <br><span>ค่าโทร & SMS</span>
                     </a>
                 </div>
                 <div class="col-md-4 text-center pro-block">
-                    <a href="true_4g">
+                    <a href="<?php echo \Main\Helper\URL::absolute('/true_4g');?>">
                         <img src="<?php echo \Main\Helper\URL::absolute('/public/images/bar/4g-icon.png');?>">
                         <br><span>โปรเน็ต 4G LTE</span>
                     </a>

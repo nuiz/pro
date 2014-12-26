@@ -20,7 +20,9 @@ class IndexCTL extends BaseCTL {
      * @GET
      */
     public function get(){
-        $view = new HtmlView('/index');
+        $view = new HtmlView('/page', $this->reqInfo->params());
+        $view->params['html'] = $this->getHtml('index');
+        $view->params['page_name'] = 'index';
         return $view;
     }
 
@@ -53,6 +55,33 @@ class IndexCTL extends BaseCTL {
     public function editPage(){
         $path = 'private/ckpage/'.$this->reqInfo->urlParam('page_name').'.php';
         file_put_contents($path, $this->reqInfo->param('html'));
+
+        $view = new RedirectView(URL::absolute('/'.$this->reqInfo->urlParam('page_name')));
+        return $view;
+    }
+
+    /**
+     * @POST
+     * @uri login
+     */
+    public function login(){
+        if($_POST['password'] == '111111'){
+            $_SESSION['login'] = true;
+        }
+        else {
+            session_destroy();
+        }
+
+        $view = new RedirectView(URL::absolute('/'.$this->reqInfo->urlParam('page_name')));
+        return $view;
+    }
+
+    /**
+     * @POST
+     * @uri logout
+     */
+    public function logout(){
+        session_destroy();
 
         $view = new RedirectView(URL::absolute('/'.$this->reqInfo->urlParam('page_name')));
         return $view;
