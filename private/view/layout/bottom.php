@@ -8,7 +8,7 @@ background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ *
 background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );">
-        <h4 class="pull-left" style="color: white;">Footer</h4>
+        <h5 class="pull-left" style="color: white;padding: 10px;">Footer</h5>
     </div>
 </div>
 </body>

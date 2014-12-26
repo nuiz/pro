@@ -111,7 +111,7 @@ background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 ">
-        <h4 class="pull-left" style="color: white;padding-left: 10px;">Logo</h4>
+        <a href="<?php echo \Main\Helper\URL::absolute('/');?>"> <h4 class="pull-left" style="color: white;padding-left: 10px;line-height: 34px;">Logo</h4></a>
         <div class="pull-right" style="padding: 10px;">
             <?php if(@$_SESSION['login']){ ?>
                 <form method="post" action="<?php echo \Main\Helper\URL::absolute('/logout');?>">
